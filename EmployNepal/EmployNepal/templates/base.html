@@ -9,11 +9,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/footer.css'%}"> 
+    <link rel="stylesheet" href="{% static 'css/style.css'%}"> 
+
 
     <title>EmployNepal</title>
 </head>
@@ -39,8 +39,9 @@
             </ul>
             <form class="form-inline my-4" method="GET" action="search">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search by resume name" aria-label="Search" name= "Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Resume</button>
+                <button class="btn btn-outline-secondary my-2 mr-5 my-sm-0" type="submit">Search Resume</button>
             </form>
+            {% block logincontent %}{% endblock%}
         </div>
     </nav>
 

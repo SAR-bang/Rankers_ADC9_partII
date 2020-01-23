@@ -24,7 +24,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
     path('search',views.searchResume),
-    
+    path('login/',loginpage, name = 'Login'),
+    path('signup/',signup, name = 'Signup'),
+    path('signup/save',signup_data),
+    path('login/checkcreditinials', loginUser),
+    path('logout/',logoutUser, name = 'logout'),
 ]
 
 urlpatterns += [

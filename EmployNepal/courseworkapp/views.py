@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import *
 from django.core.files.storage import FileSystemStorage
 
+
 def create_job(request):
     return render(request,'create_job.html')
     
@@ -80,6 +81,7 @@ def save_Resume(request):
     else:
         form = Resume()
     return render(request, 'resume.html', {'form':form})
+
 
 
 def resumes_list(request):

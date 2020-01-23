@@ -17,3 +17,11 @@ class Resume(models.Model):
 
     def __str__(self):
         return f"  the resume name is {self.name} "
+  
+  # custom permission for the model
+#   class Meta:
+#         permissions = [
+#         ("change_task_status", "Can change the status of tasks"),
+#         ("popup_task", "Can remove a task by setting its status as closed"),
+#         ]
+    

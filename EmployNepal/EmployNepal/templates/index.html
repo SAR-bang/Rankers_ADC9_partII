@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br>
+<h2>Dream Jobs available </h2>
+<br><br>
+<h4> Welcome to our page. Here you can upload jobs seek for your 
+dream jobs etc.</h4>
+<br>
+<a href="{% url 'create_job' %}" class="btn btn-primary ml-5"> Add Jobs </a>
+<a href="{% url 'uploadResume' %}" class="btn btn-primary ml-5">Upload Resume </a>
+{% if Jobs %}
+<br><br><br>
+<h2 style="margin-left:60px;">Available jobs</h2>
+<br><br><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Category</th>
+      <th scope="col">Discription</th>
+      <th scope="col">Update</th>
+	<th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+{% for job in Jobs %}
+      <th scope="row">1</th>
+      <td>{{job.job_Title}}</td>
+      <td>{{job.job_Catagory}}</td>
+ 	<td>{{job.job_discription}}</td>
+      <td><a href="/courseworkapp/edit/{{job.id}}">Update this</a></td>
+      <td><a href="/courseworkapp/delete/{{job.id}}">Delete this</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endif %}
+
+{% endblock %}
+

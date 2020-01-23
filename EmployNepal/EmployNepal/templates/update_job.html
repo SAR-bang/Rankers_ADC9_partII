@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Job </title>
+</head>
+<body>
+    {% if Job %}
+    <form method="POST" action="update/{{Job.id}}">
+        {% csrf_token %}
+        Update job_Title: <input name="job_Title" type="text" value ={{Job.job_Title}}> <br>
+        Update job_discription: <input name="job_discription" type="text" value={{Job.job_discription}}> <br>
+        Update job_Catagory: <input name="job_Catagory" type="text" value={{Job.job_Catagory}}> <br>
+        <input type="submit">
+    </form>
+    {% endif %}
+
+</body>
+</html>

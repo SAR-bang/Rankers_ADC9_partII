@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="savedata" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="File Name">File Name : </label>
+      <input type="text" name="filename" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label for="User name">User Name : </label>
+        <input type="text" name="username" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="Resume Upload">Upload your resume: </label>
+        <input type="File" class="form-control" name="Resume">
+      </div>
+      <div class="form-group">
+        <label for="QR code">Enter your QR code : </label>
+        <input type="File" class="form-control" name="imageQR">
+      </div>
+    
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+
+
+
+
+
+
+
+<br><br><br>
+<a href="download">Resumes available</a>
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <h2>Downloadable Resumes</h2>
+<br>
+
+{% if pdfs %}
+<br><br><br>
+<h2 style="margin-left:60px;">Resumes Uploaded</h2>
+<br><br><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">S.No.</th>
+      <th scope="col">Resume title</th>
+      <th scope="col"> Resume Download</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        {% for pdf in pdfs %}
+      <th scope="row">1</th>
+      <td>{{pdf.name}}</td>
+      <td><a href="{{pdf.resume.url }}">Download Pdf</a></td>
+    </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+{%else %}
+There are no related files
+    {% endif %}
+{% endblock %}

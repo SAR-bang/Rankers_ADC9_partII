@@ -8,6 +8,11 @@ class Job(models.Model):
     def __str__(self):
         return self.job_Title + " " + self.job_discription+" "+ self.job_Catagory
 
+     # we can create add permission features using  class Meta
+
+    class Meta :
+        permissions = (("can_post_job", "Can post a job"),)
+        
 class Resume(models.Model):
     name = models.CharField(max_length = 50)
     user = models.CharField(max_length = 50)
@@ -17,3 +22,9 @@ class Resume(models.Model):
 
     def __str__(self):
         return f"  the resume name is {self.name} "
+
+
+    class Meta : 
+        permissions = (("uploadResume","can upload Resume"),("modifyResume","can modify Resume"),)
+
+    # Now since we have created custom permission in the permission models to give permission on the basis of the user  we prefer

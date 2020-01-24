@@ -15,7 +15,7 @@ class Job(models.Model):
     class Meta :
         permissions = (("can_post_job", "Can post a job"),)
 
-     def is_valid_job(self):
+    def is_valid_job(self):
         return self.job_Title!=None
 
     def is_valid_catagory(self):
@@ -39,7 +39,6 @@ class Resume(models.Model):
         permissions = (("uploadResume","can upload Resume"),("modifyResume","can modify Resume"),)
 
     # Now since we have created custom permission in the permission models to give permission on the basis of the user  we prefer
-=======
   
   # custom permission for the model
 #   class Meta:
@@ -48,7 +47,7 @@ class Resume(models.Model):
 #         ("popup_task", "Can remove a task by setting its status as closed"),
 #         ]
     
-     def is_valid_date(self):
+    def is_valid_date(self):
         yearUp = int(self.YearUploaded.strftime('%Y'))
         currentYear = int(datetime.datetime.now().year)
         if(yearUp<=currentYear):

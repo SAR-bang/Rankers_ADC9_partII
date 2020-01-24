@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    'django.contrib.sessions', # used for user login and logout features session 
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'courseworkapp'

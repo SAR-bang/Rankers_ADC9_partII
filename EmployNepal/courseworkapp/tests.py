@@ -26,7 +26,7 @@ class Setup_Class(TestCase):
     def test_is_valid_format(self):
         Resume1 = Resume.objects.get(name = "Res1")
         valuepdf = Resume1.is_valid_format()
-        self.assertTrue(valuepdf,True)
+        self.assertEqual(valuepdf,"pdf")
 
     def test_is_validcatagory(self):
         job1 = Job.objects.get(job_Title = "manager")

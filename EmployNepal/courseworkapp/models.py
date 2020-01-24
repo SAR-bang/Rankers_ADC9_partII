@@ -58,7 +58,7 @@ class Resume(models.Model):
         url =  str(self.resume)
         list1 = url.split(".")
         format = list1[-1]
-        return format=="pdf"
+        return format
 
        
 class JobSeeker(models.Model):

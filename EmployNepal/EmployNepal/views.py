@@ -6,11 +6,6 @@ from django.contrib.auth import login, logout, authenticate
 
 
 def index(request):
-    if request.user.is_authenticated:
-        print("yes")
-    else:
-        print("NO")
-
     Job_obj = Job.objects.all()
     print(Job_obj)
     context_varible = {
@@ -21,7 +16,7 @@ def index(request):
 
 
 def signup(request):
-    logout(request,user)
+    logout(request)
     return render(request, 'signup.html')
 
 def signup_data(request):
@@ -32,7 +27,9 @@ def signup_data(request):
         get_password = request.POST['password']
 
         user_obj = User.objects.create_user(username=get_fullname,email=get_email,password=get_password)
-        return HttpResponse("logged in system")
+        return render(request, 'index.html', {
+                    'Jobs' : Job.objects.all() 
+                    })
 
 
 def loginpage(request):
@@ -49,9 +46,8 @@ def loginUser(request):
                     return render(request, 'index.html', {
                     'Jobs' : Job.objects.all() 
                     })
-                else:
-                    return HttpResponse("your password and username didnot match")
-
+            else:
+                return HttpResponse("your password and username didnot match")
 
 
 def logoutUser(request):

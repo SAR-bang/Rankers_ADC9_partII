@@ -1,2 +1,2 @@
-# Rankers_ADC9_partII
+Rankers
 about user authetications, permissions, model relationships, TestCases
